@@ -12,7 +12,7 @@ public class Main {
                 new Eyes("Eyes", "normal","brown", true),
                 new Heart("Heart", "normal", 90),
                 new Skin("Skin", "normal", "white", 40),
-                new Stomatch("Stomatch", "normal", false)
+                new Stomatch("Stomatch", "normal", true)
                 );
 
         boolean isFinish = false;
@@ -117,6 +117,23 @@ public class Main {
                     break;
                 case 4 :
                     System.out.println("Perut");
+                    boolean isPerut = false;
+                    while (!isPerut){
+                        patient.getStomatch().getDetail();
+                        if (patient.getStomatch().isEmpty() == true) {
+                            System.out.println("\t\t1. Makan");
+                            System.out.println("\t\t2. Keluar");
+                        } else {
+                            System.out.println("\t\t0. Keluar");
+                        }
+                        int inputPerut = scanner.nextInt();
+
+                        if (inputPerut == 1) {
+                            patient.getStomatch().makan();
+                        } else {
+                            isPerut = true;
+                        }
+                    }
                     break;
                 case 5 :
                     isFinish = true;

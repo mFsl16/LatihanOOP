@@ -14,9 +14,9 @@ public class Stomatch extends Organ {
         super.getDetail();
 
         if (isEmpty) {
-            System.out.println("Stomatch is full.");
+            System.out.println("Perut anda kosong.");
         } else {
-            System.out.println("Stomatch is empty");
+            System.out.println("Perut anda Kenyang.");
         }
     }
 
@@ -26,5 +26,10 @@ public class Stomatch extends Organ {
 
     public void setEmpty(boolean empty) {
         isEmpty = empty;
+    }
+
+    public void makan () {
+        System.out.println("Anda sedang makan ...");
+        this.isEmpty = !this.isEmpty;
     }
 }
