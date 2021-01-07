@@ -2,7 +2,7 @@ package com.faisal.latihan;
 
 public class Heart extends Organ {
 
-    private int rate;
+    private Integer rate;
 
     public Heart(String name, String healtCondition, int rate) {
         super(name, healtCondition);
@@ -12,14 +12,15 @@ public class Heart extends Organ {
     @Override
     public void getDetail() {
         super.getDetail();
-        System.out.println("Heart rate : " + this.rate);
+        System.out.println("Kondisi : " + this.getHealtCondition());
+        System.out.println("Detak Jantung : " + this.rate);
     }
 
     public int getRate() {
         return rate;
     }
 
-    public void setRate(int rate) {
+    public void setRate(Integer rate) {
         this.rate = rate;
     }
 }

@@ -21,9 +21,9 @@ public class Eyes extends Organ {
 
     public void eyesDetail () {
         if( this.isOpen() == true) {
-            System.out.println("Eyes Opened");
+            System.out.println("Mata di buka");
         } else {
-            System.out.println("Eyes Closed");
+            System.out.println("Mata di tutup");
         }
     }
 

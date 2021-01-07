@@ -10,7 +10,7 @@ public class Main {
 
         Patient patient = new Patient("Faisal", "23",
                 new Eyes("Eyes", "normal","brown", true),
-                new Heart("Heart", "normal", 16),
+                new Heart("Heart", "normal", 90),
                 new Skin("Skin", "normal", "white", 40),
                 new Stomatch("Stomatch", "normal", false)
                 );
@@ -56,7 +56,7 @@ public class Main {
                             int isClose = scanner.nextInt();
 
                             if (isClose == 1) {
-                                patient.getEyes().setOpen(false);
+                                patient.getEyes().setOpen(true);
                                 patient.getEyes().eyesDetail();
                             } else if(isClose == 2) {
                                 isQuit = true;
@@ -67,7 +67,24 @@ public class Main {
                     }
                     break;
                 case 2 :
-                    System.out.println("Jantung");
+                    boolean isContinue = true;
+                    while(isContinue) {
+                        System.out.println("Jantung");
+                        patient.getHeart().getDetail();
+                        System.out.println("\t\t1.Ubah Detak jantung");
+                        System.out.println("\t\t2.Keluar");
+                        int isChange = scanner.nextInt();
+
+                        if(isChange == 1) {
+                            System.out.print("Masukan detak jantung : ");
+                            int hRate = scanner.nextInt();
+                            patient.getHeart().setRate(hRate);
+                        } else {
+                            isContinue = false;
+                        }
+                    }
+
+
                     break;
                 case 3 :
                     System.out.println("Kulit");
