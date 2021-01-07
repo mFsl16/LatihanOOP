@@ -83,11 +83,37 @@ public class Main {
                             isContinue = false;
                         }
                     }
-
-
                     break;
                 case 3 :
                     System.out.println("Kulit");
+                    boolean isKulit =  false;
+
+                    while (!isKulit) {
+                        patient.getSkin().getDetail();
+                        System.out.println("\t\t1. Ubah warna");
+                        System.out.println("\t\t2. Ubah Kelembutan");
+                        System.out.println("\t\t3. keluar");
+                        int kulitInput = scanner.nextInt();
+
+                        switch (kulitInput) {
+                            case 1 :
+                                System.out.print("Masukan warna : ");
+                                String color = scanner.next();
+                                patient.getSkin().setColor(color);
+                                break;
+                            case 2 :
+                                System.out.print("Masukan kelembutan : ");
+                                int softness = scanner.nextInt();
+                                patient.getSkin().setSoftness(softness);
+                                break;
+                            case 3 :
+                                isKulit = true;
+                                break;
+                            default:
+                                System.err.println("Anda memasukan input yang salah !");
+                        }
+                    }
+
                     break;
                 case 4 :
                     System.out.println("Perut");
